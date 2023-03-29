@@ -7,3 +7,7 @@
 - Level-2
     - Styling index.html file using external css method.
     - Centering all the elements in the webpage
+
+
+### My customizations:
+1. camelCasing is used for naming of variables.

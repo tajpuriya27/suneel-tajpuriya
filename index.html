@@ -12,21 +12,22 @@
         <h1>TEJ Application Project</h1>
         <hr>
         <h3>Samosa</h3>
-        <p>Price: <input type="number"></p>
-        <p>Quantity: <input type="button" value="+"><span> 0 </span><input type="button" value="-"></p>
-        <p>Total: <span>0</span></p>
+        <p>Price: <input type="number" min="0" id="samosaPrice" onchange="price()"></p>
+        <p>Quantity: <button id="incSamosa">+</button><span id="numSamosa"> 0 </span><button id="decSamosa">-</button></p>
+        <p>Total: <span id="samosaTotal">0</span></p>
         <hr>
         <h3>Tea</h3>
-        <p>Price: <input type="number"></p>
-        <p>Quantity: <input type="button" value="+"><span> 0 </span><input type="button" value="-"></p>
-        <p>Total: <span>0</span></p>
+        <p>Price: <input type="number" min="0" id="teaPrice" onchange="price()"></p>
+        <p>Quantity: <button id="incTea">+</button><span id="numTea"> 0 </span><button id="decTea">-</button></p>
+        <p>Total: <span id="teaTotal">0</span></p>
         <hr>
-        <p>Total Price: <span>0</span></p>
-        <p>Vat(13%): <span>0</span></p>
-        <p>Tip(10%): <span>0</span></p>
+        <p>Total Price: <span id="totalPrice">0</span></p>
+        <p>Vat(13%): <span id="vatAmt">0</span></p>
+        <p>Tip(10%): <span id="tipAmt">0</span></p>
         <hr>
-        <p>Grand Total: <span>0</span></p>
-        <input type="button" value="Calulate Grand Total">
+        <p>Grand Total: <span id="grandTotal">0</span></p>
+        <input type="button" value="Calulate Grand Total" onclick="calculate()">
     </div>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
