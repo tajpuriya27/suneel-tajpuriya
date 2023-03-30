@@ -1,4 +1,4 @@
-// alert("Hello TEJ!");
+alert("Hello TEJ!");
 
 /* Logic for Samosa calucations */
 let incSamosa = document.getElementById("incSamosa");
@@ -16,6 +16,7 @@ decSamosa.addEventListener("click", function () {
   if (samosaCount > 0) {
     samosaCount--;
     document.getElementById("numSamosa").innerHTML = samosaCount;
+    price();
   }
 });
 
@@ -35,14 +36,17 @@ decTea.addEventListener("click", function () {
   if (teaCount > 0) {
     teaCount--;
     document.getElementById("numTea").innerHTML = teaCount;
+    price();
   }
 });
 
+
+/* Price Calcuations */
 let totalPrice, vatAmt, tipAmt;
 
 function price() {
   let samosaPrice = document.getElementById("samosaPrice").value;
-  let samosaTotal =samosaCount * samosaPrice;
+  let samosaTotal = samosaCount * samosaPrice;
   document.getElementById("samosaTotal").innerHTML = samosaTotal;
 
   let teaPrice = document.getElementById("teaPrice").value;
@@ -50,18 +54,19 @@ function price() {
   document.getElementById("teaTotal").innerHTML = teaTotal;
 
   totalPrice = samosaTotal + teaTotal;
-  document.getElementById("totalPrice").innerHTML = totalPrice; 
+  document.getElementById("totalPrice").innerHTML = totalPrice.toFixed(2);
 
-  vatAmt = .13 * totalPrice;
-  document.getElementById("vatAmt").innerHTML = vatAmt;
+  vatAmt = 0.13 * totalPrice;
+  document.getElementById("vatAmt").innerHTML = vatAmt.toFixed(2);
 
-  tipAmt = .10 * totalPrice;
-  document.getElementById("tipAmt").innerHTML = tipAmt;
+  tipAmt = 0.1 * totalPrice;
+  document.getElementById("tipAmt").innerHTML = tipAmt.toFixed(2);
 
-  
+  document.getElementById("grandTotal").innerHTML = 0.0;
 }
 
-function calculate(){
-    let grandTotal = totalPrice + vatAmt + tipAmt;
-    document.getElementById("grandTotal").innerHTML = grandTotal;
+/* Grand Total calcualtions */
+function calculate() {
+  let grandTotal = totalPrice + vatAmt + tipAmt;
+  document.getElementById("grandTotal").innerHTML = grandTotal.toFixed(2);
 }
